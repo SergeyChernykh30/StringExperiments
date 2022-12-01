@@ -5,7 +5,7 @@ public class Loader
     //числа могут быть разные в этом тексте, но программа должна уметь их извлекать и считать их сумму
     public static void main(String[] args)
     {
-        String text = "Вася заработал 5000 рублей, Петя - 7563 рубля, а Маша - 30000 рублей";
+        /*String text = "Вася заработал 5000 рублей, Петя - 7563 рубля, а Маша - 30000 рублей";
 
         String numberOnly = text.replaceAll("[^0-9]", " ");
         numberOnly = numberOnly.replaceAll(" +", " ").trim();
@@ -19,6 +19,27 @@ public class Loader
 
         int sumAllWorkersSalary = vasyaZP + petyaZP + mashaZP;
 
-        System.out.println(sumAllWorkersSalary);
+        System.out.println(sumAllWorkersSalary);*/
+
+        /*написать программу, которая будет извлекать числа из текста и ссумировать их,
+        *с помощью регулярных выражений, колличество чисел может быть любое*/
+
+        String text2 = "Вася заработал 5000 рублей, Петя - 7563 рубля, а Маша - 30000 рублей, а Даша - 23211 рублей, а Дима 94590 рублей";
+
+        String salarys = text2.replaceAll("[^0-9]", " ");
+        salarys = salarys.replaceAll(" +", " ").trim();
+
+        String [] salarysArray = salarys.split("\\s+");
+
+        System.out.println(salarys);
+
+        int sumAllWorkersSalary2 = 0;
+
+        for (int i = 0; i < salarysArray.length; i++)
+        {
+            sumAllWorkersSalary2 += Integer.parseInt(salarysArray[i]);
+        }
+
+        System.out.println(sumAllWorkersSalary2);
     }
 }
